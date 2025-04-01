@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/planodefundo"
     tools:context=".MainActivity">
 
     <EditText
@@ -12,24 +13,39 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="32dp"
-        android:inputType="textPersonName"
         android:hint="@string/Nome"
 
-        android:layout_marginTop="64dp"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/alturaEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/Altura"
+        android:inputType="numberDecimal"
+
+        app:layout_constraintEnd_toEndOf="@+id/pesoEdit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pesoEdit"
+        app:layout_constraintTop_toBottomOf="@+id/pesoEdit" />
 
     <EditText
         android:id="@+id/idadeEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/Idade"
         android:inputType="numberDecimal"
 
         app:layout_constraintEnd_toEndOf="@+id/nomeEdit"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/nomeEdit"
         app:layout_constraintTop_toBottomOf="@+id/nomeEdit" />
 
@@ -37,26 +53,15 @@
         android:id="@+id/pesoEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="20dp"
 
-        android:inputType="numberDecimal"
         android:hint="@string/Peso"
+        android:inputType="numberDecimal"
 
         app:layout_constraintEnd_toEndOf="@+id/idadeEdit"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/idadeEdit"
         app:layout_constraintTop_toBottomOf="@+id/idadeEdit" />
-
-    <EditText
-        android:id="@+id/alturaEdit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:inputType="numberDecimal"
-        android:hint="@string/Altura"
-
-        app:layout_constraintEnd_toEndOf="@+id/pesoEdit"
-        app:layout_constraintStart_toStartOf="@+id/pesoEdit"
-        app:layout_constraintTop_toBottomOf="@+id/pesoEdit" />
 
     <Button
         android:id="@+id/calcularButton"
@@ -67,19 +72,30 @@
         android:text="@string/Calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.587" />
 
     <TextView
         android:id="@+id/resultadoIMC"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="44dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/calcularButton"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/calcularButton"
         app:layout_constraintTop_toBottomOf="@+id/calcularButton"
         tools:text="@string/Resultado" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="401dp"
+        android:layout_height="144dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/imclogo"
+        tools:layout_editor_absoluteY="-16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
