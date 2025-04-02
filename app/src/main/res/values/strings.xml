@@ -6,4 +6,7 @@
     <string name="Altura">Digite a Altura (em metros)</string>
     <string name="Calcular">Calcular o IMC</string>
     <string name="Resultado">msg: IMC Calculado</string>
+    <string name="Texto1">Bem vindo a Calculadora IMC</string>
+    <string name="Texto2">Para saber seu IMC aperte no botão</string>
+    <string name="botao">Clique Aqui</string>
 </resources>

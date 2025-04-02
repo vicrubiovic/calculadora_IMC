@@ -1,50 +1,22 @@
 package com.example.calculadoraimc
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.calculadoraimc.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+
+    private lateinit var botao: Button  // Corrigi a variável para seguir o padrão camelCase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        binding.calcularButton.setOnClickListener{
-            val peso = binding.pesoEdit.text.toString().toDouble()
-            val altura = binding.alturaEdit.text.toString().toDouble()
-            if (peso != null && altura != null){
-                calcularIMC(altura, peso)
-            }else {
-                binding.resultadoIMC.text = "Erro, Porfavor insira valores que sejam validos "
-            }
+        setContentView(R.layout.activity_main)
 
+        botao = findViewById(R.id.Botao)
+        botao.setOnClickListener {
+            val intent = Intent(this, SegundaTela::class.java) // Criando corretamente o Intent
+            startActivity(intent) // Chamando a SegundaTela corretamente
         }
     }
-    private fun calcularIMC(altura:Double, peso:Double){
-        val usuario = Usuario("Usuario", 0, peso, altura)
-        val imc = usuario.calcularIMC()
-        val descricao = usuario.descricaoIMC()
-        binding.resultadoIMC.text = "IMC: %.2f - %s".format(imc,descricao)
-    }
-}
-
-class Usuario(val nome: String, val idade: Int, val peso: Double, val altura: Double){
-
-    fun calcularIMC(): Double = peso / (altura * altura)
-
-    fun descricaoIMC(): String{
-        val imc = calcularIMC()
-
-        return when{
-            imc < 18.5 -> "Abaixo do peso"
-            imc < 24.9 -> "Peso Normal"
-            imc < 29.9 -> "Sobrepeso"
-            else -> "Obeso "
-        }
-    }
-
 }

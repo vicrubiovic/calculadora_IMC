@@ -5,97 +5,53 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/planodefundo"
-    tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/nomeEdit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/Nome"
-
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/alturaEdit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:hint="@string/Altura"
-        android:inputType="numberDecimal"
-
-        app:layout_constraintEnd_toEndOf="@+id/pesoEdit"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/pesoEdit"
-        app:layout_constraintTop_toBottomOf="@+id/pesoEdit" />
-
-    <EditText
-        android:id="@+id/idadeEdit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="@string/Idade"
-        android:inputType="numberDecimal"
-
-        app:layout_constraintEnd_toEndOf="@+id/nomeEdit"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/nomeEdit"
-        app:layout_constraintTop_toBottomOf="@+id/nomeEdit" />
-
-    <EditText
-        android:id="@+id/pesoEdit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-
-        android:hint="@string/Peso"
-        android:inputType="numberDecimal"
-
-        app:layout_constraintEnd_toEndOf="@+id/idadeEdit"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/idadeEdit"
-        app:layout_constraintTop_toBottomOf="@+id/idadeEdit" />
-
-    <Button
-        android:id="@+id/calcularButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="102dp"
-        android:layout_marginEnd="102dp"
-        android:text="@string/Calcular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
+    android:background="@drawable/fundosegunda"
+    tools:context=".SegundaTela">
 
     <TextView
-        android:id="@+id/resultadoIMC"
-        android:layout_width="0dp"
+        android:id="@+id/texto1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/calcularButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/calcularButton"
-        app:layout_constraintTop_toBottomOf="@+id/calcularButton"
-        tools:text="@string/Resultado" />
+        android:layout_marginTop="96dp"
+        android:padding="16dp"
+        android:text="@string/Texto1"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="401dp"
-        android:layout_height="144dp"
+    <TextView
+        android:id="@+id/texto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:padding="16dp"
+        android:text="@string/Texto2"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/imclogo"
-        tools:layout_editor_absoluteY="-16dp" />
+        app:layout_constraintTop_toBottomOf="@id/texto1" />
 
+    <Button
+        android:id="@+id/Botao"
+        android:layout_width="229dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="132dp"
+        android:padding="16dp"
+        android:text="@string/botao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/texto2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="219dp"
+        android:layout_height="194dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/imclogodois" />
 </androidx.constraintlayout.widget.ConstraintLayout>
