@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bancodedados"
+    namespace = "com.example.calculadoraimc"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.bancodedados"
+        applicationId = "com.example.calculadoraimc"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

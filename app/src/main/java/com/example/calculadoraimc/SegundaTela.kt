@@ -2,11 +2,17 @@ package com.example.calculadoraimc
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.bancodedados.databinding.ActivitySegundaTelaBinding
+import com.example.calculadoraimc.databinding.ActivitySegundaTelaBinding
+import com.example.calculadoraimc.Dao.UsuarioDao
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class SegundaTela : AppCompatActivity() {
     private lateinit var binding: ActivitySegundaTelaBinding  // Binding atualizado
+    private var UsuarioDao: UsuarioDao? = null
+    private var listaUsuarios: MutableList<Usuario> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,21 +20,22 @@ class SegundaTela : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.calcularButton.setOnClickListener {
-            val pesoStr = binding.pesoEdit.text.toString()
-            val alturaStr = binding.alturaEdit.text.toString()
+            CoroutineScope(Dispatchers.IO).launch {
+                val pesoStr = binding.pesoEdit.text.toString()
+                val alturaStr = binding.alturaEdit.text.toString()
 
-            if (pesoStr.isEmpty() || alturaStr.isEmpty()) {
-                binding.resultadoIMC.text = "Erro: Insira valores válidos"
-                return@setOnClickListener
-            }
-            try {
-                val peso = pesoStr.toDouble()
-                val altura = alturaStr.toDouble()
-                calcularIMC(altura, peso)
-            } catch (e: NumberFormatException) {
-                binding.resultadoIMC.text = "Erro: Insira números válidos"
-            }
+                if (pesoStr.isEmpty() || alturaStr.isEmpty()) {
+                    binding.resultadoIMC.text = "Erro: Insira valores válidos"
 
+                }
+                try {
+                    val peso = pesoStr.toDouble()
+                    val altura = alturaStr.toDouble()
+                    calcularIMC(altura, peso)
+                } catch (e: NumberFormatException) {
+                    binding.resultadoIMC.text = "Erro: Insira números válidos"
+                }
+            }
         }
     }
 

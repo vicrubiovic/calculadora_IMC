@@ -1,9 +1,12 @@
 package com.example.calculadoraimc
 
+import com.example.calculadoraimc.SegundaTela
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.calculadoraimc.R
+
 
 class MainActivity : AppCompatActivity() {
 
