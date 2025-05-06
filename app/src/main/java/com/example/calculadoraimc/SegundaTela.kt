@@ -2,7 +2,8 @@ package com.example.calculadoraimc
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.calculadoraimc.databinding.ActivitySegundaTelaBinding  // Binding correto
+import com.example.bancodedados.databinding.ActivitySegundaTelaBinding
+
 
 class SegundaTela : AppCompatActivity() {
     private lateinit var binding: ActivitySegundaTelaBinding  // Binding atualizado
@@ -20,7 +21,6 @@ class SegundaTela : AppCompatActivity() {
                 binding.resultadoIMC.text = "Erro: Insira valores válidos"
                 return@setOnClickListener
             }
-
             try {
                 val peso = pesoStr.toDouble()
                 val altura = alturaStr.toDouble()
@@ -28,6 +28,7 @@ class SegundaTela : AppCompatActivity() {
             } catch (e: NumberFormatException) {
                 binding.resultadoIMC.text = "Erro: Insira números válidos"
             }
+
         }
     }
 
